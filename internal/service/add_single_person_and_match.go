@@ -5,7 +5,7 @@ import (
 )
 
 func (svc *service) AddSinglePersonAndMatch(newUser *domain.User) ([]*domain.User, *domain.ErrorFormat) {
-	var matches []*domain.User
+	matches := []*domain.User{}
 
 	userPool := svc.repo.GetUserPool()
 

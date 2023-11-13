@@ -12,7 +12,7 @@ func (svc *service) QuerySinglePerson(userName string, number uint) ([]*domain.U
 		return nil, &domain.ErrUserNotFound
 	}
 
-	var matches []*domain.User
+	matches := []*domain.User{}
 
 	userPool := svc.repo.GetUserPool()
 
