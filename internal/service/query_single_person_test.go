@@ -111,4 +111,14 @@ func TestQuerySinglePerson(t *testing.T) {
 	if len(matches3) != 3 {
 		t.Errorf("Expected 3 user, got %d", len(matches3))
 	}
+
+	_, errFormat = svc.QuerySinglePerson("Sandra", 5)
+	if errFormat != nil {
+		t.Errorf("Expected err format nil for match 3, but got: %v", errFormat)
+	}
+
+	userSandra = svc.repo.GetUserByName("Sandra")
+	if userSandra != nil {
+		t.Errorf("Expected user Sandra to be deleted, but got %v", userSandra)
+	}
 }

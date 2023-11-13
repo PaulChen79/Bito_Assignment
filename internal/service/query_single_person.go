@@ -46,6 +46,5 @@ func (svc *service) QuerySinglePerson(userName string, number uint) ([]*domain.U
 		return matches, nil
 	}
 
-	// 否則，只返回前 N 個元素
 	return matches[:number], nil
 }

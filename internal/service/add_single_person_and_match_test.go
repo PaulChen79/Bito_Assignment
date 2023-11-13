@@ -84,4 +84,11 @@ func TestAddSinglePersonAndMatch(t *testing.T) {
 	if userBob != nil {
 		t.Errorf("Expected user Bob to be deleted, got %s", userBob.Name)
 	}
+
+	newUser3 := domain.User{Name: "Sandra", Height: 177, Gender: domain.Female, RemainingDates: 5}
+
+	_, errFormat = svc.AddSinglePersonAndMatch(&newUser3)
+	if errFormat != &domain.ErrUserAlreadyExists {
+		t.Errorf("Expected err format to be ErrUserAlreadyExists, but got: %v", errFormat)
+	}
 }
