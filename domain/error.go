@@ -17,4 +17,5 @@ var (
 	ErrorServer              = ErrorFormat{Code: 500, Message: "Server Error"}
 	ErrorUnknowInternalError = ErrorFormat{Code: 404, Message: "Unknow Internal Error"}
 	ErrUserAlreadyExists     = ErrorFormat{Code: 4001, Message: "User already exists"}
+	ErrUserNotFound          = ErrorFormat{Code: 4002, Message: "User not found"}
 )
