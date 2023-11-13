@@ -16,3 +16,10 @@ func NewService(config *config.Config, repo domain.Repository) domain.Service {
 		repo:   repo,
 	}
 }
+
+func NewServiceForTest(config *config.Config, repo domain.Repository) *service {
+	return &service{
+		config: config,
+		repo:   repo,
+	}
+}
